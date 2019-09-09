@@ -38,7 +38,7 @@ public class BusinessCard {
 
    public static final String COURSE = "Курс: Java core";
    public static final String STUDENT = "Студент";
-   public String fullname;
+
 
 
     public static String name () {
@@ -51,17 +51,18 @@ public class BusinessCard {
         return fullname;
     }
 
-  public static void firstLine (int length) {
-      int  fullname1 = fullname.length();
+  public static int firstLine (String name) {
+      int  fullname1 = name.length();
 
 
-      System.out.println(fullname1);
+      return fullname1;
 
    }
 
     public static void main(String[] args) {
 
-
-        System.out.println(name());
+        String str = name();
+        System.out.println(str);
+        System.out.println(firstLine(str));
     }
 }
