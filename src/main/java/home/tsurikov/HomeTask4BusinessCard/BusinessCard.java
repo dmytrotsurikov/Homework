@@ -46,7 +46,6 @@ public class BusinessCard {
                 firstLine(maxLenght);
                 secondLine(COURSE);
                 thirdLine(STUDENT);
-
                 firstLine(maxLenght);
 
         }
