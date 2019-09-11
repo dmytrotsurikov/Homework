@@ -13,32 +13,17 @@ package home.tsurikov.HomeTask4BusinessCard;
 
 "Строка".length()
 
- int len1 =COURSE.length();
-       int len2 =STUDENT.length();
-
-
-       for (int i=0; i< len2; i++) {
-           System.out.print("*");
-
-       }
-
-
-
-        System.out.println("\n"+"*" +COURSE + "*");
-        System.out.println();
-        return len1;
-    }
-
  */
 
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class BusinessCard {
 
    public static final String COURSE = "Курс: Java core";
    public static final String STUDENT = "Студент";
-
+   public static final int CONST = 4;
 
 
     public static String name () {
@@ -51,18 +36,45 @@ public class BusinessCard {
         return fullname;
     }
 
-  public static int firstLine (String name) {
-      int  fullname1 = name.length();
+    public static void compare(String fullname) {
+        int maxLenght = COURSE.length();
+
+        if (fullname.length() >= maxLenght) {
+            maxLenght = fullname.length();
+        }
+
+                firstLine(maxLenght);
+                secondLine(COURSE);
+                thirdLine(STUDENT);
+
+                firstLine(maxLenght);
+
+        }
 
 
-      return fullname1;
+  public static void firstLine (int length) {
 
-   }
+      for (int i = 0; i < length + CONST; i++) {
+          System.out.printf("*");
+
+      }
+  }
+
+    public static void secondLine (String COURSE ) {
+        System.out.print(COURSE);
+    }
+
+    public static void thirdLine (String STUDENT ) {
+        System.out.print(STUDENT);
+    }
+
+
+
 
     public static void main(String[] args) {
 
-        String str = name();
-        System.out.println(str);
-        System.out.println(firstLine(str));
+        String fio = name();
+
+        compare(fio);
     }
 }
