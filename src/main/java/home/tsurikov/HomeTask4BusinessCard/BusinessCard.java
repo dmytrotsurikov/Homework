@@ -33,7 +33,6 @@ public class BusinessCard {
         System.out.println("Введите ФИО");
         fullname = scanner.nextLine();
 
-
         return fullname;
     }
 
@@ -43,13 +42,11 @@ public class BusinessCard {
         if (fullname.length() >= maxLenght) {
             maxLenght = fullname.length();
         }
-
         firstLine(maxLenght);
         printCard(maxLenght, COURSE);
         printCard(maxLenght, STUDENT);
         printCard(maxLenght, fullname);
         firstLine(maxLenght);
-
     }
 
 
@@ -60,10 +57,7 @@ public class BusinessCard {
             System.out.printf("*");
 
         }
-
     }
-
-
 
 
     public static void printCard(int length, String zvezda) {
@@ -86,7 +80,6 @@ public class BusinessCard {
     public static void main(String[] args) {
 
         String fio = getName();
-
         compare(fio);
     }
 }
