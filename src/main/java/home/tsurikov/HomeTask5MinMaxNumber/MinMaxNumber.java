@@ -14,24 +14,25 @@ public class MinMaxNumber {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter number");
-        Long number = scanner.nextLong();
+        long number = scanner.nextLong();
 
-        int max, min;
-        int num = (int) (number % 10);
+        long max, min;
+        long num = number % 10;
 
-        max=min=(int) (number % 10);
+        max=min=number % 10;
 
-        while (num > 0) {
+        while (number > 0) {
+            long temp = number % 10;
 
-            if (min > num) {
-                min = num;
+            if (temp > max) {
+                max = temp;
             }
-            if (max < num) {
-                max = num;
+            if (temp < min) {
+                min = temp;
             }
-            num /= 10;
+            number /= 10;
         }
-        System.out.println("Max: " + max + "Min:  " + min);
+        System.out.println("Max: " + max + " Min:  " + min);
 
     }
 }
