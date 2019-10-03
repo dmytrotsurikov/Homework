@@ -16,11 +16,13 @@ public class MinMaxNumber {
         System.out.println("Enter number");
         Long number = scanner.nextLong();
 
-        int max = 0;
-        int min = 0;
+        int max, min;
         int num = (int) (number % 10);
 
+        max=min=(int) (number % 10);
+
         while (num > 0) {
+
             if (min > num) {
                 min = num;
             }
@@ -29,8 +31,7 @@ public class MinMaxNumber {
             }
             num /= 10;
         }
-        System.out.println("Max: " + max + "Min: " + min);
-
+        System.out.println("Max: " + max + "Min:  " + min);
 
     }
 }
