@@ -25,7 +25,7 @@ public class Polindrom {
 
         for (int i = 0; i < (n/2); ++i) {
             char ch= string.charAt(i);
-            char chlast =string.charAt(n-i);
+            char chlast =string.charAt(n-i-1);
             if (ch != chlast) {
                 return false;
             }
