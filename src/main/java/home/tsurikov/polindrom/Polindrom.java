@@ -1,5 +1,5 @@
 package home.tsurikov.polindrom;
-
+// арозаупаланалапуазора
 import java.util.Scanner;
 
 public class Polindrom {
@@ -22,8 +22,11 @@ public class Polindrom {
 
      public static boolean isPalindrome(String string) {
         int n = string.length();
+
         for (int i = 0; i < (n/2); ++i) {
-            if (string.charAt(i) != string.charAt(n - i - 1)) {
+            char ch= string.charAt(i);
+            char chlast =string.charAt(n-i);
+            if (ch != chlast) {
                 return false;
             }
         }
