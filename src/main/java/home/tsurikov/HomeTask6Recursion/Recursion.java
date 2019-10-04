@@ -8,6 +8,9 @@
 
 package home.tsurikov.HomeTask6Recursion;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Scanner;
 
 public class Recursion {
@@ -15,7 +18,6 @@ public class Recursion {
     public static void main(String[] args) {
 
         // Sn =(A1+An)*n/2
-
         int total = calculation(getNumberOfEmployees());
 
        System.out.printf("Общее число собеседований: %d", total);
@@ -29,13 +31,18 @@ public class Recursion {
     }
 
     public static int calculation(int employees) {
-        final int  FIRSTINTERVIEW= 0;
 
-        int empl=employees;
-        int interview= empl-1;
-        int totalInterview=(FIRSTINTERVIEW +interview)*empl/2;
+        if (employees <=1){
+            employees=0;
+            return employees;
+        }
 
-        return totalInterview;
+        if (employees>1){
+            employees=(employees-1)*employees/2;
+            return employees;
+
+        }
+        return employees;
     }
 
 }
