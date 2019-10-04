@@ -34,15 +34,10 @@ public class Recursion {
 
         if (employees <=1){
             employees=0;
-            return employees;
+            return 0;
         }
 
-        if (employees>1){
-            employees=(employees-1)*employees/2;
-            return employees;
-
-        }
-        return employees;
+        return employees=(employees-1)*employees/2;
     }
 
 }
