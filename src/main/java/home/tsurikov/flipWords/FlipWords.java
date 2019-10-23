@@ -29,17 +29,17 @@ public class FlipWords {
     public static String  wordDivision(String sentence) {
 
 
-        String[] words = sentence.split(" ");
+        String[] words = sentence.split(" ");  //разделить строку на cлова по пробелу
 
         StringBuilder newSetence =new StringBuilder();
         for (int i=0; i < words.length; i++) {
-            StringBuilder reverseWord = new StringBuilder(words[i]);
-            reverseWord = reverseWord.reverse();
+            StringBuilder reverseWords = new StringBuilder(words[i]);
+            reverseWords = reverseWords.reverse();  // перворачиваем слова
             if (i == (words.length - 1)) {
-                newSetence.append(reverseWord);
+                newSetence.append(reverseWords);
             }
             else {
-                newSetence.append(reverseWord).append(" ");
+                newSetence.append(reverseWords).append(" ");
             }
         }
         return newSetence.toString();
