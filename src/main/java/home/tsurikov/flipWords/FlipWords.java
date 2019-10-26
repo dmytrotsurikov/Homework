@@ -36,10 +36,10 @@ public class FlipWords {
             StringBuilder reverseWords = new StringBuilder(words[i]);
             reverseWords = reverseWords.reverse();  // перворачиваем слова
             if (i == (words.length - 1)) {
-                newSetence.append(reverseWords);
+                newSetence.append(reverseWords); //если элемент массива равен  добавляет слово
             }
             else {
-                newSetence.append(reverseWords).append(" ");
+                newSetence.append(reverseWords).append(" "); // в остальных случаях доабвяем пробел
             }
         }
         return newSetence.toString();
