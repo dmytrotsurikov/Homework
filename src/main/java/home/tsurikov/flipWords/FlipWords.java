@@ -42,7 +42,7 @@ public class FlipWords {
                 newSetence.append(reverseWords).append(" "); // в остальных случаях доабвяем пробел
             }
         }
-        return newSetence.toString();
+        return newSetence.toString();  //возвращаем в виде строки
     }
 
     }
