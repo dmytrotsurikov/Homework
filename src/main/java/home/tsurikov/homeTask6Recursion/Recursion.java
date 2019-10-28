@@ -6,7 +6,7 @@
  */
 
 
-package home.tsurikov.HomeTask6Recursion;
+package home.tsurikov.homeTask6Recursion;
 
 import java.util.Scanner;
 

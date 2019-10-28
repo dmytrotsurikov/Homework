@@ -1,4 +1,4 @@
-package home.tsurikov.HomeTask4BusinessCard;
+package home.tsurikov.homeTask4BusinessCard;
 /*
 Напишите программу, в которой задаются данные(строки): имя, фамилия и отчество и  выводящую эти  данные в следующем виде:
 
@@ -16,8 +16,7 @@ package home.tsurikov.HomeTask4BusinessCard;
  */
 
 
-import java.sql.SQLOutput;
-   import java.util.Scanner;
+import java.util.Scanner;
 
 public class BusinessCard {
 
