@@ -17,7 +17,7 @@ public class FlipWords {
 
     }
 
-    public static String getSentence () {
+    public static String getSentence() {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter Sentence");
@@ -26,25 +26,22 @@ public class FlipWords {
 
     }
 
-    public static String  wordDivision(String sentence) {
-
+    public static String wordDivision(String sentence) {
 
         String[] words = sentence.split(" ");  //разделить строку на cлова по пробелу
 
-        StringBuilder newSetence =new StringBuilder();
-        for (int i=0; i < words.length; i++) {
+        StringBuilder newSetence = new StringBuilder();
+        for (int i = 0; i < words.length; i++) {
             StringBuilder reverseWords = new StringBuilder(words[i]);
             reverseWords = reverseWords.reverse();  // перворачиваем слова
             if (i == (words.length - 1)) {
                 newSetence.append(reverseWords); //если элемент массива равен  добавляет слово
-            }
-            else {
+            } else {
                 newSetence.append(reverseWords).append(" "); // в остальных случаях доабвяем пробел
             }
         }
         return newSetence.toString();  //возвращаем в виде строки
     }
-
-    }
+}
 
 

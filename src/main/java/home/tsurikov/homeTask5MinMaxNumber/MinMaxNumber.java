@@ -11,12 +11,12 @@ import java.util.Scanner;
 
 public class MinMaxNumber {
     public static void main(String[] args) {
-        int[] ret= calculate(getNumber());
+        int[] ret = calculate(getNumber());
         System.out.printf("Max is %d  Min is %d  ", ret[0], ret[1]);
 
     }
 
-    public static long getNumber () {
+    public static long getNumber() {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter number");
@@ -25,15 +25,15 @@ public class MinMaxNumber {
 
     }
 
-    public static int[] calculate (long number){
+    public static int[] calculate(long number) {
 
         int max, min;
-        int num = (int)(number % 10);
+        int num = (int) (number % 10);
 
-        max=min=(int)(number % 10);
+        max = min = (int) (number % 10);
 
         while (number > 0) {
-            int temp =(int) (number % 10);
+            int temp = (int) (number % 10);
 
             if (temp > max) {
                 max = temp;
@@ -43,6 +43,6 @@ public class MinMaxNumber {
             }
             number /= 10;
         }
-        return new int[] {max, min};
+        return new int[]{max, min};
     }
 }

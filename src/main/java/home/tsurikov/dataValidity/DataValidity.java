@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 public class DataValidity {
     public static void main(String[] args) {
 
-        String fullName= getdata();
+        String fullName = getdata();
         checkFullName(fullName);
     }
 
@@ -33,7 +33,7 @@ public class DataValidity {
         return pattern.matcher(fullName).matches();
     }
 
-    public static void checkFullName (String fullName) {
+    public static void checkFullName(String fullName) {
 
         if (paramsFullName(fullName)) {
             System.out.println("ФИО корректное");
@@ -42,6 +42,4 @@ public class DataValidity {
             System.out.println("ФИО '" + fullName + "' введено неправильно");
         }
     }
-
-
 }
