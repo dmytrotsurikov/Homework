@@ -33,12 +33,7 @@ public class FlipWords {
         StringBuilder newSetence = new StringBuilder();
         for (int i = 0; i < words.length; i++) {
             StringBuilder reverseWords = new StringBuilder(words[i]).reverse();
-      //      reverseWords = reverseWords.reverse();  // перворачиваем слова
-      //      if (i == (words.length - 1)) {
-      //          newSetence.append(reverseWords); //если элемент массива равен  добавляет слово
-      //      } else {
-      //          newSetence.append(reverseWords).append(" "); // в остальных случаях доабвяем пробел
-      //      }
+            newSetence.append(reverseWords).append(" "); // в остальных случаях доабвяем пробел
         }
         return newSetence.toString();  //возвращаем в виде строки
     }
