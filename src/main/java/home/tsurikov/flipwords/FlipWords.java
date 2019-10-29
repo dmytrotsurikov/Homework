@@ -5,7 +5,7 @@
         String[] words = “Sadfsdfs sdfsdf sdfsdf”.split(“ ”);
 */
 
-package home.tsurikov.flipWords;
+package home.tsurikov.flipwords;
 
 import java.util.Scanner;
 
@@ -28,17 +28,17 @@ public class FlipWords {
 
     public static String wordDivision(String sentence) {
 
-        String[] words = sentence.split(" ");  //разделить строку на cлова по пробелу
+        String[] words = sentence.split("^[\\s]+$");  //разделить строку на cлова по пробелу
 
         StringBuilder newSetence = new StringBuilder();
         for (int i = 0; i < words.length; i++) {
-            StringBuilder reverseWords = new StringBuilder(words[i]);
-            reverseWords = reverseWords.reverse();  // перворачиваем слова
-            if (i == (words.length - 1)) {
-                newSetence.append(reverseWords); //если элемент массива равен  добавляет слово
-            } else {
-                newSetence.append(reverseWords).append(" "); // в остальных случаях доабвяем пробел
-            }
+            StringBuilder reverseWords = new StringBuilder(words[i]).reverse();
+      //      reverseWords = reverseWords.reverse();  // перворачиваем слова
+      //      if (i == (words.length - 1)) {
+      //          newSetence.append(reverseWords); //если элемент массива равен  добавляет слово
+      //      } else {
+      //          newSetence.append(reverseWords).append(" "); // в остальных случаях доабвяем пробел
+      //      }
         }
         return newSetence.toString();  //возвращаем в виде строки
     }

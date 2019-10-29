@@ -1,4 +1,4 @@
-package home.tsurikov.homeTask4BusinessCard;
+package home.tsurikov.hometask4businesscard;
 /*
 Напишите программу, в которой задаются данные(строки): имя, фамилия и отчество и  выводящую эти  данные в следующем виде:
 

@@ -5,7 +5,7 @@
 	Наибольшее число: 8
  */
 
-package home.tsurikov.homeTask5MinMaxNumber;
+package home.tsurikov.hometask5minmaxnumber;
 
 import java.util.Scanner;
 

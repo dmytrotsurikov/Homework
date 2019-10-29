@@ -4,7 +4,7 @@
 ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE);
  */
 
-package home.tsurikov.arrayMultipleThree;
+package home.tsurikov.arraymultiplethree;
 
 import java.util.Arrays;
 import java.util.Scanner;

@@ -6,7 +6,7 @@ email - любые латинские символы, цифры, дефис и 
 Проверить все вводимые данные и вывести неверно введенные.
  */
 
-package home.tsurikov.dataValidity;
+package home.tsurikov.datavalidity;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
