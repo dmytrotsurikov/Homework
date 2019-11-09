@@ -14,32 +14,73 @@ import java.util.regex.Pattern;
 public class DataValidity {
     public static void main(String[] args) {
 
-        String fullName = getdata();
+        String fullName = getfio();
+        String mobile = getmobile();
+        String email = getemail();
         checkFullName(fullName);
+        checkMobile(mobile);
+        checkEmail(email);
     }
 
-    public static String getdata() {
+    public static String getfio() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите Ваше ФИО!");
+        System.out.println("Введите Ваше ФИО");
 
         String fullName = scanner.nextLine();
         return fullName;
     }
 
+    public static String getmobile() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите мобильный телефон в формате '+380 далее 2 цифры кода (Украина) и 7 любых цифр'");
 
-    public static boolean paramsFullName(String fullName) {
+        String mobile = scanner.nextLine();
+        return mobile;
+    }
 
-        Pattern pattern = Pattern.compile("^[A-Za-z\\s\\-]+$");
-        return pattern.matcher(fullName).matches();
+    public static String getemail() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите Ваш email");
+
+        String email = scanner.nextLine();
+        return email;
     }
 
     public static void checkFullName(String fullName) {
 
-        if (paramsFullName(fullName)) {
+        Pattern pattern = Pattern.compile("^[A-Za-z\\s\\-]+$");
+
+        if (pattern.matcher(fullName).matches()) {
             System.out.println("ФИО корректное");
             return;
         } else {
             System.out.println("ФИО '" + fullName + "' введено неправильно");
         }
     }
+
+    public static void checkMobile(String mobile) {
+
+        Pattern pattern = Pattern.compile("^\\+(380)(50|95|67|97)(\\d){7}$");
+
+        if (pattern.matcher(mobile).matches()) {
+            System.out.println("Mobile введен корретно");
+            return;
+        } else {
+            System.out.println("Mobile '" + mobile + "' введен неправильно");
+        }
+    }
+
+    public static void checkEmail(String email) {
+
+        Pattern pattern = Pattern.compile("^([a-z0-9_-]+\\.)*[a-z0-9_-]+@[a-z0-9_-]+(\\.[a-z0-9_-]+)*\\.[a-z]{2,6}$");
+
+        if (pattern.matcher(email).matches()) {
+            System.out.println("Email введен корретно");
+            return;
+        } else {
+            System.out.println("Email '" + email + "' введен неправильно");
+        }
+    }
+
+
 }
