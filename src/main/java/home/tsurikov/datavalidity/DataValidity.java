@@ -20,7 +20,7 @@ public class DataValidity {
 
     public static String getdata() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите Ваше ФИО");
+        System.out.println("Введите Ваше ФИО!");
 
         String fullName = scanner.nextLine();
         return fullName;
