@@ -17,8 +17,7 @@ public class ArrayMultipleThree {
 
         int[] array = randomArrayGenerator(getLengthOfArray());
         System.out.println(Arrays.toString(array));
-        System.out.println(findMultipleThree(array));
-
+        findMultipleThree(array);
     }
 
     public static Integer getLengthOfArray() {
@@ -34,23 +33,17 @@ public class ArrayMultipleThree {
     public static int[] randomArrayGenerator(int lengthOfArrow) {
 
         int[] array = new int[lengthOfArrow];
-        // Random random= new Random();
         for (int i = 0; i < array.length; i++) {
             array[i] = ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE);
-            // array[i] = random.nextInt();
         }
         return array;
     }
 
-    public static String findMultipleThree(int[] array) {
-
-        StringBuilder requestedNumbers = new StringBuilder();
-
+    public static void findMultipleThree(int[] array) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 3 == 0) {
-                requestedNumbers.append(array[i]).append(" ");  //переменной добавить элемент массива и пробел
+                System.out.printf("%d ", array[i]);
             }
         }
-        return requestedNumbers.toString();
     }
 }
