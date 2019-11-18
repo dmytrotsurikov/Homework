@@ -1,23 +1,18 @@
 package home.tsurikov.triangle;
 
 public class Point {
-    public static void main(String[] args) {
 
-        float qqq = getDictance();
-
-        System.out.println(qqq);
-    }
-    private float x =5;
-    private float y= 6;
+    private float x;
+    private float y;
 
     // конструктор
     public Point(float x,float y) {
         this.x = x;
         this.y = y;
     }
-
-    public float getDictance(Point pointTo){
-       float distance =(float) Math.hypot(x-x, y-y);
+    // расчет расстояния меду точками.
+    public float getDictance(Point point){
+       float distance =(float) Math.hypot(point.x-x, point.y-y);
        return distance;
     }
 
