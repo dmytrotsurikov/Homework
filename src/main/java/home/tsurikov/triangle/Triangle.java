@@ -2,6 +2,11 @@ package home.tsurikov.triangle;
 
 public class Triangle {
 
+    private final static int ISOSCELES = 1;
+    private final static int EQUILATERAL = 2;
+    private final static int RECTANGULAR = 3;
+    private final static int ARBITRARY = 4;
+
     private Point a;
     private Point b;
     private Point c;
@@ -12,18 +17,27 @@ public class Triangle {
         this.b = b;
         this.c = c;
     }
+
     //тестовый метод по проверке правильности расчеттов
     public static void main(String[] args) {
-        Point a = new Point(3.0f, 4.0f);
-        Point b = new Point(5.0f, 7.0f);
-        Point c = new Point(6.0f, 8.0f);
+        Point a = new Point(0.0f, 0.0f);
+        Point b = new Point(0.0f, 6.0f);
+        Point c = new Point(6.0f, 0.0f);
         Triangle test1 = new Triangle(a, b, c);
 
         float perimetr = test1.getPerimetr();
         float square = test1.getSquare();
+        boolean isoscelesTriangle = test1.isoscelesTriangle();
+        boolean equilateralTriangle = test1.equilateralTriangle();
+        boolean rectangularTriangle = test1.rectangularTriangle();
+        boolean arbitraryTriangle = test1.arbitraryTriangle();
 
         System.out.println(perimetr);
         System.out.println(square);
+        System.out.println(isoscelesTriangle);
+        System.out.println(equilateralTriangle);
+        System.out.println(rectangularTriangle);
+        System.out.println(arbitraryTriangle);
     }
 
     //периметр треугольника (сумма длин его сторон)
@@ -40,7 +54,17 @@ public class Triangle {
         return square;
     }
 
-    public boolean isEquilateralTriangle() {
+    //Равнобедренный треугольник.  Две стороны равны друг другу
+    public boolean isoscelesTriangle() {
+        float side1 = a.getDistance(b);
+        float side2 = b.getDistance(c);
+        float side3 = a.getDistance(c);
+
+        return (side1 == side2 || side2 == side3 || side1 == side3);
+    }
+
+    //Равносторонний треугольник. Стороны  равны друг другу
+    public boolean equilateralTriangle() {
         float side1 = a.getDistance(b);
         float side2 = b.getDistance(c);
         float side3 = a.getDistance(c);
@@ -48,5 +72,41 @@ public class Triangle {
         return (side1 == side2 && side2 == side3 && side1 == side3);
     }
 
+    //Прямоугольный треугольник. (квадрат одной стороны треугольника равен сумме квадратов двух других сторон)
+    public boolean rectangularTriangle() {
+        float side1 = a.getDistance(b);
+        float side2 = b.getDistance(c);
+        float side3 = a.getDistance(c);
 
+        return (Math.pow(side1, 2) == Math.pow(side2, 2) + Math.pow(side3, 2) || Math.pow(side2, 2) == Math.pow(side1, 2) + Math.pow(side3, 2) || Math.pow
+                (side3, 2) == Math.pow(side2, 2) + Math.pow(side1, 2));
+
+    }
+
+    //Произвольный треугольник. Стороны не равны друг другу
+    public boolean arbitraryTriangle() {
+        float side1 = a.getDistance(b);
+        float side2 = b.getDistance(c);
+        float side3 = a.getDistance(c);
+
+        if (side1 != side2 && side2 != side3 && side1 != side3) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private int getType() {
+        if (isoscelesTriangle()) {
+            return ISOSCELES;
+        }
+        if (equilateralTriangle()) {
+            return EQUILATERAL;
+        }
+        if (rectangularTriangle()) {
+            return RECTANGULAR;
+        } else {
+            return ARBITRARY;
+        }
+    }
 }
