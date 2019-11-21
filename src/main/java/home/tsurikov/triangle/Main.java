@@ -26,7 +26,7 @@ Triangle {
 2. Равносторонний
 3. Прямоугольный
 4. Произвольный
-2
+
 Найден равносторонний треугольник.
 Индекс: 10
 Треугольник[a(1;3) b(4;8) c(7;3)]
@@ -35,29 +35,38 @@ Triangle {
 Дополнительно по желанию.
 Подсчитать количество каждого из классов треугольников и вывести в консоль.
 
-        Triangle[] triangles = new Triangle[100000];
-        int index = 0;
-
-        while (index < triangles.length) {
-            Triangle triangle =  new Triangle(generatePoint(),generatePoint(),generatePoint());
-            if (triangle.getSquare() != 0) {
-                triangles[index] = triangle;
-                index++;
-            }
-        }
-        return triangles;
-
-
  */
 
 package home.tsurikov.triangle;
+
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
-      //  Point point =  new Point(5,9);
+        Main main = new Main();
+        int test = main.getInputData();
+        System.out.println(test);
 
-      //  System.out.println(point.getDictance());
+    }
+
+    public int getInputData() {
+
+        System.out.println("Пожалуйста укажите номер типа треугольника:");
+        System.out.println("1. Равнобедренный\n" + "2. Равносторонний\n" + "3. Прямоугольный\n" + "4. Произвольный");
+
+        Scanner scanner = new Scanner(System.in);
+        int type = scanner.nextInt();
+
+        while (type <= 0 || type > 4) {
+            System.out.println("Неверный тип треугольника. Укжитеномер еще раз: ");
+            type = scanner.nextInt();
+        }
+        return type;
+    }
+
+    private static void findTriangle(Triangle[] triangles, int typeNumber) {
+
     }
 }

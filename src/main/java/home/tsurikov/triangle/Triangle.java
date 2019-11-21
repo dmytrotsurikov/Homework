@@ -96,7 +96,7 @@ public class Triangle {
         }
     }
 
-    private int getType() {
+    public  int getType() {
         if (isoscelesTriangle()) {
             return ISOSCELES;
         }
