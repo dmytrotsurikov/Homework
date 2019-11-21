@@ -35,19 +35,6 @@ Triangle {
 Дополнительно по желанию.
 Подсчитать количество каждого из классов треугольников и вывести в консоль.
 
-        Triangle[] triangles = new Triangle[100000];
-        int index = 0;
-
-        while (index < triangles.length) {
-            Triangle triangle =  new Triangle(generatePoint(),generatePoint(),generatePoint());
-            if (triangle.getSquare() != 0) {
-                triangles[index] = triangle;
-                index++;
-            }
-        }
-        return triangles;
-
-
  */
 
 package home.tsurikov.triangle;
