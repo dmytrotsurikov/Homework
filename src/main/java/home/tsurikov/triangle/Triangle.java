@@ -18,27 +18,16 @@ public class Triangle {
         this.c = c;
     }
 
-    //тестовый метод по проверке правильности расчеттов
-    public static void main(String[] args) {
-        Point a = new Point(0.0f, 0.0f);
-        Point b = new Point(0.0f, 6.0f);
-        Point c = new Point(6.0f, 0.0f);
-        Triangle test1 = new Triangle(a, b, c);
+    // координаты (сохраняем как форматировання строка)
+    public String toString() {
 
-        float perimetr = test1.getPerimetr();
-        float square = test1.getSquare();
-        boolean isoscelesTriangle = test1.isoscelesTriangle();
-        boolean equilateralTriangle = test1.equilateralTriangle();
-        boolean rectangularTriangle = test1.rectangularTriangle();
-        boolean arbitraryTriangle = test1.arbitraryTriangle();
+        float A = a.getX() + a.getY();
+        float B = b.getX() + b.getY();
+        float C = c.getX() + c.getY();
 
-        System.out.println(perimetr);
-        System.out.println(square);
-        System.out.println(isoscelesTriangle);
-        System.out.println(equilateralTriangle);
-        System.out.println(rectangularTriangle);
-        System.out.println(arbitraryTriangle);
+        return String.format("a:%s b:%s c:%s", A, B, C);
     }
+
 
     //периметр треугольника (сумма длин его сторон)
     public float getPerimetr() {
@@ -96,7 +85,7 @@ public class Triangle {
         }
     }
 
-    public  int getType() {
+    public int getType() {
         if (isoscelesTriangle()) {
             return ISOSCELES;
         }

@@ -46,14 +46,18 @@ public class Main {
     public static void main(String[] args) {
 
         Main main = new Main();
-        int test = main.getInputData();
-        System.out.println(test);
+        int inputType = getInputData();
 
+        Generator lastStep = new Generator();
+        Triangle[] triangles = lastStep.generateTriangles();
+
+        main.findTriangle(triangles, inputType);
     }
 
-    public int getInputData() {
+    // получае данные от пользователя
+    public static int getInputData() {
 
-        System.out.println("Пожалуйста укажите номер типа треугольника:");
+        System.out.println("Пожалуйста укажите номер типа треугольника из списка:");
         System.out.println("1. Равнобедренный\n" + "2. Равносторонний\n" + "3. Прямоугольный\n" + "4. Произвольный");
 
         Scanner scanner = new Scanner(System.in);
@@ -66,7 +70,29 @@ public class Main {
         return type;
     }
 
-    private static void findTriangle(Triangle[] triangles, int typeNumber) {
+    // находим треугольник из массива треугольников
+    public void findTriangle(Triangle[] triangle, int typeNumber) {
 
+        int count = 0;
+
+        for (int i = 0; i < triangle.length; i++) {
+            if (triangle[i].getType() == typeNumber) {
+                printTriangleParams(triangle[i], i);
+                count++;
+                break;
+            }
+        }
+        if (count == 0) {
+            System.out.println("К сожалению, нет подходящего типа треугольникаtxtx");
+        }
+    }
+
+    // вывод парметров треугольника из класса Triangle
+    public void printTriangleParams(Triangle triangle, int index) {
+        System.out.println("Индекс = " + index);
+        System.out.println("Координаты = " + triangle.toString());
+        System.out.println("Периметр = " + triangle.getPerimetr());
+        System.out.println("Площадь = " + triangle.getSquare());
     }
 }
+
