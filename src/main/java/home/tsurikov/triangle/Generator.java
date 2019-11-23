@@ -14,7 +14,7 @@ public class Generator {
         Triangle[] triangles = new Triangle[100000];
 
         int index = 0;
-    // цикл проверки треугольников, где площадь !=0
+        // цикл проверки треугольников, где площадь !=0
         while (index < triangles.length) {
             Triangle triangle = new Triangle(generatePoint(), generatePoint(), generatePoint());
             if (triangle.getSquare() != 0) {
