@@ -78,11 +78,7 @@ public class Triangle {
         float side2 = b.getDistance(c);
         float side3 = a.getDistance(c);
 
-        if (side1 != side2 && side2 != side3 && side1 != side3) {
-            return true;
-        } else {
-            return false;
-        }
+       return (side1 != side2 && side2 != side3 && side1 != side3);
     }
 
     public int getType() {

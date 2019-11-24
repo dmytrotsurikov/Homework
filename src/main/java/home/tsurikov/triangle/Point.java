@@ -21,8 +21,8 @@ public class Point {
 
     // расчет расстояния между точками.
     public float getDistance(Point point) {
-        float distance = (float) Math.hypot(point.x - x, point.y - y);
-        return distance;
+
+        return (float) Math.hypot(point.x - x, point.y - y);
     }
 
 }
