@@ -20,6 +20,8 @@ Math.pow(A, 1.0/N)
 
 package home.tsurikov.calulator;
 
+import java.util.Scanner;
+
 public class Calculator {
 
     public double calculate(double val1, double val2, String operator) {
@@ -33,20 +35,46 @@ public class Calculator {
         return operation.resultFor(val1, val2);
     }
 
-    private BinaryOperation getOperationFor(String operator) {
-        if ("*".equals(operator)) {
-            return new Multiplication();
-        } else if ("-".equals(operator)) {
-            return new Substraction();
-        }
+    public  static String getInputData() {
 
-        return null;
+        System.out.println("Введите выражение");
+
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+
+        return input;
+    }
+
+    private BinaryOperation getOperationFor(String operator) {
+        switch (operator) {
+            case "*":
+                return new Multiplication();
+            case "+":
+                return new Addition();
+            case "-":
+                return new Substraction();
+            case "/":
+                return new Division();
+            case "^":
+                return new Exponentiation();
+            case "log":
+                return new Logarithm();
+            case "sqrt":
+                return new Root();
+            default:
+                return null;
+        }
     }
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
 
-        System.out.println( calculator.calculate(456.546, 545.5465, "*") );
-        System.out.println( calculator.calculate(456.546, 545.5465, "-") );
+        System.out.println(calculator.calculate(456.546, 545.5465, "*"));
+        System.out.println(calculator.calculate(456.546, 545.5465, "-"));
+        System.out.println(calculator.calculate(456.546, 545.5465, "+"));
+        System.out.println(calculator.calculate(456.546, 545.5465, "/"));
+        System.out.println(calculator.calculate(456.546, 545.5465, "^"));
+        System.out.println(calculator.calculate(456.546, 545.5465, "log"));
+        System.out.println(calculator.calculate(456.546, 545.5465, "sqrt"));
     }
 }
