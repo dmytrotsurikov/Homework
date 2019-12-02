@@ -1,23 +1,25 @@
 package home.tsurikov.calulator;
 
+import java.util.Scanner;
+
 public class Parser {
 
-    public static String[] parser() {
+    public static String getInputData() {
 
-        Calculator calculator = new Calculator();
-        String input = calculator.getInputData();
+        System.out.println("Введите выражение");
+
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+
+        return input;
+    }
+
+    public static String[] parser(String input) {
+
         String expression[] = input.split("");
-
-        // for (int i = 0;i<input.length(); i++)
-        //    System.out.println(input.charAt(i));
-
-
         return expression;
 
     }
-
-
-    public static void main(String[] args) {
-        parser();
-    }
 }
+
+

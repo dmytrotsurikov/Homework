@@ -35,15 +35,7 @@ public class Calculator {
         return operation.resultFor(val1, val2);
     }
 
-    public  static String getInputData() {
 
-        System.out.println("Введите выражение");
-
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-
-        return input;
-    }
 
     private BinaryOperation getOperationFor(String operator) {
         switch (operator) {
