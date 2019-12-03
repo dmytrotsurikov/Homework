@@ -1,4 +1,4 @@
-package home.tsurikov.calulator;
+package home.tsurikov.calculator;
 
 /**
  * Операция умножения

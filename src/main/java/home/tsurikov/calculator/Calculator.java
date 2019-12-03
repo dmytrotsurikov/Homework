@@ -18,9 +18,7 @@ logB ( N ) = log (N) / log (B)
 Math.pow(A, 1.0/N)
  */
 
-package home.tsurikov.calulator;
-
-import java.util.Scanner;
+package home.tsurikov.calculator;
 
 public class Calculator {
 
@@ -34,7 +32,6 @@ public class Calculator {
 
         return operation.resultFor(val1, val2);
     }
-
 
 
     private BinaryOperation getOperationFor(String operator) {
@@ -60,13 +57,10 @@ public class Calculator {
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
+        Expression expr = new Expression();
+        Parser getinput = new Parser();
+        String input = getinput.getInputData();
+        expr.expression(input);
 
-        System.out.println(calculator.calculate(456.546, 545.5465, "*"));
-        System.out.println(calculator.calculate(456.546, 545.5465, "-"));
-        System.out.println(calculator.calculate(456.546, 545.5465, "+"));
-        System.out.println(calculator.calculate(456.546, 545.5465, "/"));
-        System.out.println(calculator.calculate(456.546, 545.5465, "^"));
-        System.out.println(calculator.calculate(456.546, 545.5465, "log"));
-        System.out.println(calculator.calculate(456.546, 545.5465, "sqrt"));
     }
 }

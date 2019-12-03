@@ -1,23 +1,19 @@
-package home.tsurikov.calulator;
+package home.tsurikov.calculator;
 
 import java.util.Scanner;
 
 public class Expression {
 
-
-    private String operator;
     private double leftOperand;
+    private String operator;
     private double rightOperand;
-
-
 
     public void expression(String input) {
         String Expression[] = input.split(" ");
 
         leftOperand = Double.parseDouble(Expression[0]);
-        operator = Expression[1];
+        operator = Double.parseDouble(Expression[1]);
         rightOperand = Double.parseDouble(Expression[2]);
-
     }
 
     public String getOperator() {
@@ -31,6 +27,5 @@ public class Expression {
     public double getRightOperand() {
         return rightOperand;
     }
-
 
 }

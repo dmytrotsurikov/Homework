@@ -1,4 +1,4 @@
-package home.tsurikov.calulator;
+package home.tsurikov.calculator;
 
 /**
  * Интерфейс описывающий операцию над двумя операндами

@@ -1,7 +1,7 @@
 /*
 операция сложения (X + Y)
  */
-package home.tsurikov.calulator;
+package home.tsurikov.calculator;
 
 public class Addition implements BinaryOperation {
 
