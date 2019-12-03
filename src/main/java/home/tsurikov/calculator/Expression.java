@@ -8,13 +8,23 @@ public class Expression {
     private String operator;
     private double rightOperand;
 
-    public void expression(String input) {
-        String Expression[] = input.split(" ");
+    public  String getInputData() {
 
-        leftOperand = Double.parseDouble(Expression[0]);
-        operator = Double.parseDouble(Expression[1]);
-        rightOperand = Double.parseDouble(Expression[2]);
+        System.out.println("Введите выражение");
+
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+
+        return input;
     }
+
+//    public void expression(String input) {
+//        String parsExpression[] = input.split(" ");
+//
+//        leftOperand = Double.parseDouble(parsExpression[0]);
+//        operator = parsExpression[1];
+//        rightOperand = Double.parseDouble(parsExpression[2]);
+//    }
 
     public String getOperator() {
         return operator;

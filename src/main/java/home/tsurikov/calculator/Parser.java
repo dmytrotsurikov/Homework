@@ -4,20 +4,20 @@ import java.util.Scanner;
 
 public class Parser {
 
-    public static String getInputData() {
 
-        System.out.println("Введите выражение");
+    public  String[] parser(String input) {
 
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
+         double leftOperand;
+         String operator;
+         double rightOperand;
 
-        return input;
-    }
+        String parsExpression[] = input.split(" ");
 
-    public static String[] parser(String input) {
+        leftOperand = Double.parseDouble(parsExpression[0]);
+        operator = parsExpression[1];
+        rightOperand = Double.parseDouble(parsExpression[2]);
 
-        String expression[] = input.split("");
-        return expression;
+        return parsExpression;
 
     }
 }

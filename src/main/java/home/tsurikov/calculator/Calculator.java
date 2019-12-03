@@ -59,8 +59,10 @@ public class Calculator {
         Calculator calculator = new Calculator();
         Expression expr = new Expression();
         Parser getinput = new Parser();
-        String input = getinput.getInputData();
-        expr.expression(input);
+        String input = expr.getInputData();
+      //  expr.expression(input);
+        getinput.parser(input);
+        System.out.println(calculator.calculate(expr.getLeftOperand(), expr.getRightOperand(), expr.getOperator()));
 
     }
 }
