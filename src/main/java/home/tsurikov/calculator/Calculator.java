@@ -34,7 +34,7 @@ public class Calculator {
     }
 
 
-    private BinaryOperation getOperationFor(String operator) {
+    private BinaryOperation getOperationFor(String operator)  {
         switch (operator) {
             case "*":
                 return new Multiplication();
@@ -58,10 +58,13 @@ public class Calculator {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
         Expression expr = new Expression();
-        Parser getinput = new Parser();
+        Parser getInput = new Parser();
         String input = expr.getInputData();
+       // в работающем варианте
       //  expr.expression(input);
-        getinput.parser(input);
+
+        getInput.parser(input);
+
         System.out.println(calculator.calculate(expr.getLeftOperand(), expr.getRightOperand(), expr.getOperator()));
 
     }

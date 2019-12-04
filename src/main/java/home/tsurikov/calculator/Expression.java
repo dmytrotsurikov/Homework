@@ -4,11 +4,19 @@ import java.util.Scanner;
 
 public class Expression {
 
-    private double leftOperand;
-    private String operator;
-    private double rightOperand;
+    public double leftOperand;
+    public String operator;
+    public double rightOperand;
 
-    public  String getInputData() {
+    public Expression( ) {
+
+        this.leftOperand = leftOperand;
+        this.rightOperand = rightOperand;
+        this.operator = operator;
+
+    }
+
+    public String getInputData() {
 
         System.out.println("Введите выражение");
 
@@ -18,7 +26,11 @@ public class Expression {
         return input;
     }
 
-//    public void expression(String input) {
+
+
+
+//      метод надо перенести в Parser, но он рабоатет
+//        public void expression(String input) {
 //        String parsExpression[] = input.split(" ");
 //
 //        leftOperand = Double.parseDouble(parsExpression[0]);
