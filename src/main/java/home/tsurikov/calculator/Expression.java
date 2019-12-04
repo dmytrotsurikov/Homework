@@ -18,13 +18,15 @@ public class Expression {
         return input;
     }
 
-//    public void expression(String input) {
-//        String parsExpression[] = input.split(" ");
-//
-//        leftOperand = Double.parseDouble(parsExpression[0]);
-//        operator = parsExpression[1];
-//        rightOperand = Double.parseDouble(parsExpression[2]);
-//    }
+ //   public void expression(String input) {
+    public void expression() {
+  //      String parsExpression[] = input.split(" ");
+        String parsExpression[];  //= input.split(" ");
+
+       leftOperand = Double.parseDouble(parsExpression[0]);
+        operator = parsExpression[1];
+        rightOperand = Double.parseDouble(parsExpression[2]);
+    }
 
     public String getOperator() {
         return operator;
