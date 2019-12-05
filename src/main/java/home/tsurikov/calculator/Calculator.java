@@ -26,10 +26,10 @@ public class Calculator {
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        Parser getInput = new Parser();
+        Parser parserExp = new Parser();
 
         String input = calculator.getInputData();
-        Expression expr = getInput.parser(input);
+        Expression expr = parserExp.parser(input);
 
         System.out.println(calculator.calculate(expr.getLeftOperand(), expr.getRightOperand(), expr.getOperator()));
 
