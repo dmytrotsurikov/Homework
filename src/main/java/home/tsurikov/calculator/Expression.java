@@ -8,7 +8,7 @@ public class Expression {
     public String operator;
     public double rightOperand;
 
-    public Expression( ) {
+    public Expression(double leftOperand,double rightOperand,String operator) {
 
         this.leftOperand = leftOperand;
         this.rightOperand = rightOperand;
@@ -25,8 +25,6 @@ public class Expression {
 
         return input;
     }
-
-
 
 
 //      метод надо перенести в Parser, но он рабоатет

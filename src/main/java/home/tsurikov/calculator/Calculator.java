@@ -57,15 +57,21 @@ public class Calculator {
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        Expression expr = new Expression();
+
         Parser getInput = new Parser();
-        String input = expr.getInputData();
+
        // в работающем варианте
       //  expr.expression(input);
 
-        getInput.parser(input);
+       Expression expr = getInput.parser("435435 * 3463462");
+//        String operator = p[1];
+//        double v1 = Double.parseDouble(p[0]);
+//        double v2 = Double.parseDouble(p[2]);
 
         System.out.println(calculator.calculate(expr.getLeftOperand(), expr.getRightOperand(), expr.getOperator()));
+//        System.out.println(calculator.calculate(p[0].indexOf(0),p[2].indexOf(0),p[1]));
+//        System.out.println(calculator.calculate(p[0].charAt(0), p[2].charAt(0),p[1]));
+//        System.out.println(calculator.calculate(v1, v2,operator));
 
     }
 }

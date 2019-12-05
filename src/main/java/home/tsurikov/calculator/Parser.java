@@ -1,21 +1,16 @@
 package home.tsurikov.calculator;
 
-import java.util.Scanner;
-
 public class Parser {
 
 
-    public  String[] parser(String input) {
+    public Expression parser(String input) {
 
-        Expression  expression = new Expression();
 
         String parsExpression[] = input.split(" ");
 
-        expression.leftOperand = Double.parseDouble(parsExpression[0]);
-        expression.rightOperand = Double.parseDouble(parsExpression[2]);
-        expression.operator = parsExpression[1];
-
-        return parsExpression;
+        return new Expression(Double.parseDouble(parsExpression[0]),
+                              Double.parseDouble(parsExpression[2]),
+                              parsExpression[1]);
     }
 
 //    public  String[] parser(String input) {
