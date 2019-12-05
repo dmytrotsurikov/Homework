@@ -20,7 +20,20 @@ Math.pow(A, 1.0/N)
 
 package home.tsurikov.calculator;
 
+import java.util.Scanner;
+
 public class Calculator {
+
+    public static void main(String[] args) {
+        Calculator calculator = new Calculator();
+        Parser getInput = new Parser();
+
+        String input = calculator.getInputData();
+        Expression expr = getInput.parser(input);
+
+        System.out.println(calculator.calculate(expr.getLeftOperand(), expr.getRightOperand(), expr.getOperator()));
+
+    }
 
     public double calculate(double val1, double val2, String operator) {
         BinaryOperation operation = getOperationFor(operator);
@@ -33,8 +46,7 @@ public class Calculator {
         return operation.resultFor(val1, val2);
     }
 
-
-    private BinaryOperation getOperationFor(String operator)  {
+    private BinaryOperation getOperationFor(String operator) {
         switch (operator) {
             case "*":
                 return new Multiplication();
@@ -55,23 +67,13 @@ public class Calculator {
         }
     }
 
-    public static void main(String[] args) {
-        Calculator calculator = new Calculator();
+    public String getInputData() {
 
-        Parser getInput = new Parser();
+        System.out.println("Введите выражение");
 
-       // в работающем варианте
-      //  expr.expression(input);
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
 
-       Expression expr = getInput.parser("435435 * 3463462");
-//        String operator = p[1];
-//        double v1 = Double.parseDouble(p[0]);
-//        double v2 = Double.parseDouble(p[2]);
-
-        System.out.println(calculator.calculate(expr.getLeftOperand(), expr.getRightOperand(), expr.getOperator()));
-//        System.out.println(calculator.calculate(p[0].indexOf(0),p[2].indexOf(0),p[1]));
-//        System.out.println(calculator.calculate(p[0].charAt(0), p[2].charAt(0),p[1]));
-//        System.out.println(calculator.calculate(v1, v2,operator));
-
+        return input;
     }
 }
