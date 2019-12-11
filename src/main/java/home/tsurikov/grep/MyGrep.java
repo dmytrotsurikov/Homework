@@ -41,9 +41,9 @@ public class MyGrep {
             }
 
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Файл не найден");
+        } catch (IOException expression) {
+            System.out.println("Выражение не найдено");
         }
     }
 }
