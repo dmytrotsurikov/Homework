@@ -20,7 +20,7 @@ public class MyGrep {
 
     public static void main(String[] args) {
         try {
-            System.out.println("Введите путь к файлу"); // C:\\Users\\Dmitriy\\Desktop\\test.txt
+            System.out.println("Введите путь к файлу"); // C:\\Users\\Dmitriy\\Desktop\\test.txt  C:\Users\dtsurikov\Desktop\DC.txt
             Scanner scanner = new Scanner(System.in);
             String path = scanner.nextLine();
             // построчное считывание файла
@@ -42,7 +42,7 @@ public class MyGrep {
 
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
-        } catch (IOException expression) {
+        } catch (IOException e) {
             System.out.println("Выражение не найдено");
         }
     }
