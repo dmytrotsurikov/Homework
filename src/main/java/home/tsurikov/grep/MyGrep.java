@@ -15,6 +15,8 @@ package home.tsurikov.grep;
 
 import java.io.*;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MyGrep {
 
@@ -29,12 +31,16 @@ public class MyGrep {
 
             System.out.println("Введите выражение");
             String expression = scanner.nextLine();
+            Pattern pattern = Pattern.compile(expression);
 
             String line;
             int lineNumber;
+            boolean equal;
 
             while ((line = lineNumberReader.readLine()) != null) {
-                if (line.contains(expression)) {
+                Matcher matcher = pattern.matcher(line);
+                equal = matcher.find();
+                if (equal) {
                     lineNumber = lineNumberReader.getLineNumber();
                     System.out.println(lineNumber + " " + line);
                  }
