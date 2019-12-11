@@ -10,6 +10,9 @@
 
 https://docs.oracle.com/javase/7/docs/api/java/io/LineNumberReader.html
 https://javadevblog.com/kak-postrochno-schity-vat-fajl-v-java.html
+https://metanit.com/java/tutorial/7.4.php
+https://javarush.ru/groups/posts/regulyarnye-vyrazheniya-v-java
+
  */
 package home.tsurikov.grep;
 
@@ -31,7 +34,8 @@ public class MyGrep {
 
             System.out.println("Введите выражение");
             String expression = scanner.nextLine();
-            Pattern pattern = Pattern.compile(expression);
+            //   Pattern pattern = Pattern.compile(expression);
+            Pattern pattern = Pattern.compile(String.format("^.*(%s).*$", expression));
 
             String line;
             int lineNumber;
