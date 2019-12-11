@@ -16,44 +16,22 @@ https://javarush.ru/groups/posts/regulyarnye-vyrazheniya-v-java
  */
 package home.tsurikov.grep;
 
-import java.io.*;
+
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class MyGrep {
 
     public static void main(String[] args) {
-        try {
-            System.out.println("Введите путь к файлу"); // C:\\Users\\Dmitriy\\Desktop\\test.txt  C:\Users\dtsurikov\Desktop\DC.txt
-            Scanner scanner = new Scanner(System.in);
-            String path = scanner.nextLine();
-            // построчное считывание файла
-            //создаем LineNumberReader с существующего FileReader для построчного считывания
-           LineNumberReader lineNumberReader = new LineNumberReader(new FileReader(path));
 
-            System.out.println("Введите выражение");
-            String expression = scanner.nextLine();
-            //   Pattern pattern = Pattern.compile(expression);
-            Pattern pattern = Pattern.compile(String.format("^.*(%s).*$", expression));
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите путь к файлу"); // C:\\Users\\Dmitriy\\Desktop\\test.txt  C:\Users\dtsurikov\Desktop\DC.txt
+        String path = scanner.nextLine();
+        System.out.println("Введите выражение");
+        String regularExpression = scanner.nextLine();
 
-            String line;
-            int lineNumber;
-            boolean equal;
+        Expression expression = new Expression();
+        expression.matching(path,regularExpression);
 
-            while ((line = lineNumberReader.readLine()) != null) {
-                Matcher matcher = pattern.matcher(line);
-                equal = matcher.find();
-                if (equal) {
-                    lineNumber = lineNumberReader.getLineNumber();
-                    System.out.println(lineNumber + " " + line);
-                 }
-            }
-
-        } catch (FileNotFoundException e) {
-            System.out.println("Файл не найден");
-        } catch (IOException e) {
-            System.out.println("Выражение не найдено");
-        }
     }
+
 }
