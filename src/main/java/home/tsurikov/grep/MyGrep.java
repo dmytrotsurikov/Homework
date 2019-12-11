@@ -13,9 +13,12 @@ https://javadevblog.com/kak-postrochno-schity-vat-fajl-v-java.html
 https://metanit.com/java/tutorial/7.4.php
 https://javarush.ru/groups/posts/regulyarnye-vyrazheniya-v-java
 
+try with resources
+https://javarush.ru/quests/lectures/questmultithreading.level01.lecture09
+https://www.examclouds.com/java/java-core-russian/try-with-resources
+
  */
 package home.tsurikov.grep;
-
 
 import java.util.Scanner;
 
@@ -30,8 +33,7 @@ public class MyGrep {
         String regularExpression = scanner.nextLine();
 
         Expression expression = new Expression();
-        expression.matching(path,regularExpression);
+        expression.matching(path, regularExpression);
 
     }
-
 }

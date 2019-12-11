@@ -9,10 +9,8 @@ import java.util.regex.Pattern;
 
 public class Expression {
     public void matching (String path, String regularExpression){
-        try {
-            // построчное считывание файла
-            //создаем LineNumberReader с существующего FileReader для построчного считывания
-            LineNumberReader lineNumberReader = new LineNumberReader(new FileReader(path));
+        try (LineNumberReader lineNumberReader = new LineNumberReader(new FileReader(path));) {
+
             //   Pattern pattern = Pattern.compile(expression);
             Pattern pattern = Pattern.compile(String.format("^.*(%s).*$", regularExpression));
 
@@ -34,6 +32,7 @@ public class Expression {
         } catch (IOException e) {
             System.out.println("Выражение не найдено");
         }
+
     }
 }
 
