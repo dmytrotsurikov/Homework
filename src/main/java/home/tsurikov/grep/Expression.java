@@ -30,7 +30,7 @@ public class Expression {
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
         } catch (IOException e) {
-            System.out.println("Выражение не найдено");
+            e.printStackTrace();
         }
 
     }
